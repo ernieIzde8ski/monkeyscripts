@@ -7,6 +7,9 @@
 // @match        https://www.memum.io/player/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=memum.io
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/dist/memumio-badge.js
+// @downloadURL  https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/dist/memumio-badge.js
+// @supportURL   https://github.com/ernieIzde8ski/monkeyscripts/issues
 // ==/UserScript==
 
 let fixBadgesInterval: number | null = null;
