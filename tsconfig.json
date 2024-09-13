@@ -9,13 +9,14 @@
     /* Modules */
     "module": "commonjs",
     "rootDir": "./src",
+    "skipLibCheck": true,
 
     /* JavaScript Support */
     "allowJs": false,
 
     /* Emit */
     "declaration": false,
-    "outDir": "./dist",
+    "outDir": "./target",
     "removeComments": false,
     "downlevelIteration": false,
     "emitBOM": false,

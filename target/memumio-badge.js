@@ -13,12 +13,12 @@
 // ==/UserScript==
 let fixBadgesInterval = null;
 function fixBadges() {
-  for (const badge of document.getElementsByClassName("badge")) {
-    const newHTML = badge.innerHTML.replace("Moderator", "Manger");
-    badge.innerHTML = newHTML;
-    if (fixBadgesInterval !== null) {
-      clearInterval(fixBadgesInterval);
+    for (const badge of document.getElementsByClassName("badge")) {
+        const newHTML = badge.innerHTML.replace("Moderator", "Manger");
+        badge.innerHTML = newHTML;
+        if (fixBadgesInterval !== null) {
+            clearInterval(fixBadgesInterval);
+        }
     }
-  }
 }
 setInterval(fixBadges, 250);
