@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "noErrorTruncation": true,
+
     /* Projects */
     "incremental": true,
 
