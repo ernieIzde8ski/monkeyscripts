@@ -9,7 +9,7 @@
     "target": "es2021",
 
     /* Modules */
-    "module": "commonjs",
+    "module": "esnext",
     "rootDir": "./src",
     "skipLibCheck": true,
 

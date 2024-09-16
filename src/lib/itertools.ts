@@ -1,7 +1,7 @@
 type Falsy = undefined | null | 0 | "" | false;
 type NonFalsy<T> = Exclude<T, Falsy>;
 
-export default class itertools<T> implements Iterable<T> {
+class itertools<T> implements Iterable<T> {
   private __iter: Iterable<T>;
 
   protected static __bool<T>(arg: T): arg is NonFalsy<T> {

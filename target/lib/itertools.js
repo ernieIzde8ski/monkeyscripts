@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class itertools {
     static __bool(arg) {
         return !!arg;
@@ -74,4 +72,3 @@ class itertools {
         return [...this];
     }
 }
-exports.default = itertools;
