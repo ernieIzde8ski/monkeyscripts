@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Table Borders
 // @namespace    http://tampermonkey.net
-// @version      1.0
+// @version      1.1
 // @description  Add table borders to various menus for readability.
 // @author       Ernie Serrano
 // @match        https://www.reddit.com/settings/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/target/table-borders.ts
-// @downloadURL  https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/target/table-borders.ts
+// @updateURL    https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/target/scripts/table-borders.js
+// @downloadURL  https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/target/scripts/table-borders.js
 // @supportURL   https://github.com/ernieIzde8ski/monkeyscripts/issues
-// @require      https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/master/lib/itertools.js
+// @require      https://raw.githubusercontent.com/ernieIzde8ski/monkeyscripts/6e17796/target/lib/itertools.js
 // ==/UserScript==
 
 const RAW_STYLE_SHEETS = Object.freeze({
@@ -41,12 +41,6 @@ function newStyleElement(
   return styleElement;
 }
 
-function elemHasShadowRoot(
-  elem: Element,
-): elem is Element & { shadowRoot: ShadowRoot } {
-  return !(elem.shadowRoot === null);
-}
-
 function updateBorders() {
   if (
     document.URL.match(/https:\/\/(?:www\.)?reddit.com\/settings(?:\/\w+)?/gm)
@@ -70,7 +64,8 @@ function updateBorders() {
       const root = elem.shadowRoot ?? document;
 
       if (root.getElementById(styleID) === null) {
-        let head = elem.shadowRoot ?? document.querySelector("head")!;
+        let head = elem.shadowRoot ?? document.querySelector("head");
+        if (head === null) throw "couldn't find `head` element";
         let style = newStyleElement("reddit", styleID);
         head.appendChild(style);
         console.log("TABLE BORDERS SCRIPT RAN SUCCCESSFULLY!");

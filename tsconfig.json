@@ -26,7 +26,7 @@
     "noEmitOnError": true,
 
     /* Interop Constraints */
-    "isolatedModules": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
