@@ -14,12 +14,15 @@
 // ==/UserScript==
 
 const RAW_STYLE_SHEETS = Object.freeze({
-  reddit: `:host>div>div,
+  reddit: `:host>div>a>div,
+:host>div>div,
 :host>div>label,
 :host>div>ul,
 :host>ul>label,
+settings-account-section>a>div,
 settings-account-section>div,
 settings-account-section>label,
+settings-account-section>label>div,
 settings-account-section>ul>label { border: 1px solid black; padding: 5px}`,
 });
 
