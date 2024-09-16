@@ -1,3 +1,4 @@
+default_install_hook_types: [pre-commit, pre-push, commit-msg]
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -15,7 +16,7 @@ repos:
         name: prettier
         entry: prettier --write --ignore-unknown
         language: node
-        exclude: "target/.*"
+        exclude: "target/.*|.git/.*"
         additional_dependencies: ["prettier"]
       # public builds
       - id: tsc
@@ -25,3 +26,6 @@ repos:
         pass_filenames: false
         types_or: [javascript, jsx, ts, tsx]
         additional_dependencies: ["typescript", "@types/tampermonkey@5.0.3"]
+  - repo: "https://github.com/jorisroovers/gitlint"
+    rev: "v0.19.1"
+    hooks: [{ id: gitlint }]
